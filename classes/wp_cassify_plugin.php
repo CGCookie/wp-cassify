@@ -414,7 +414,7 @@ class WP_Cassify_Plugin {
 				// Create wordpress user account if not exist
 				if ( $wp_cassify_create_user_if_not_exist == 'create_user_if_not_exist' ) {
 					if ( WP_Cassify_Utils::wp_cassify_is_wordpress_user_exist( $cas_user_datas[ 'cas_user_id' ] ) == false ) {
-						$wordpress_user_id = WP_Cassify_Utils::wp_cassify_create_wordpress_user( $cas_user_datas[ 'cas_user_id' ], null );
+						$wordpress_user_id = WP_Cassify_Utils::wp_cassify_create_wordpress_user( $cas_user_datas[ 'cas_user_id' ], $cas_user_datas[ 'cas_user_id' ] );
 
 						if ( $wordpress_user_id > 0 ) {
 							$wordpress_user_account_created = true;

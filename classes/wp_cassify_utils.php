@@ -240,7 +240,7 @@ class WP_Cassify_Utils {
 		$user_email = null;
 		$wp_user_id = 0;
 
-		if (! username_exists( $cas_user_id ) ) {
+		if (! email_exists( $cas_user_id ) ) {
 			if ( (! empty( $cas_user_email_attribute_value ) ) && ( email_exists( $cas_user_email_attribute_value ) == false ) ) {
 				$user_email = $cas_user_email_attribute_value;
 			}
@@ -261,7 +261,7 @@ class WP_Cassify_Utils {
 
 		$is_wordpress_user_exist = TRUE;
 
-		if (! username_exists( $cas_user_id ) ) {
+		if (! email_exists( $cas_user_id ) ) {
 			$is_wordpress_user_exist = false;
 		}
 		
