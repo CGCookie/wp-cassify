@@ -363,7 +363,7 @@ class WP_Cassify_Plugin {
 				$cas_user_datas = $this->wp_cassify_parse_xml_response( $cas_server_xml_response );
 
 				if ( empty( $cas_user_datas['cas_user_id'] ) ) {
-					die( 'CAS Authentication failed ! ');
+					$this->wp_cassify_logout();
 				}
 				else {
 					$this->wp_cassify_set_authenticated( true );
