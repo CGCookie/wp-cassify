@@ -535,9 +535,14 @@ class WP_Cassify_Plugin {
 						$service_url = apply_filters( 'wp_cassify_redirect_service_url_filter', $service_url );
 					}
 					
+					$urlSeparator = '?';
+					if (strpos($wp_cassify_login_servlet, '?') !== false) {
+						$urlSeparator = '&';
+					}
 					$redirect_url = $wp_cassify_base_url .
-						$wp_cassify_login_servlet . '?' .
-						$this->wp_cassify_default_service_service_parameter_name . '=' . $service_url;
+							$wp_cassify_login_servlet . $urlSeparator .
+							$this->wp_cassify_default_service_service_parameter_name . '=' . $service_url;
+
 						
 					if ( $gateway_mode ) {
 						$redirect_url .= '&gateway=true';
